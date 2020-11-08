@@ -1,4 +1,6 @@
+import { VehicleModel } from './../../../core/domain/vehicle.model';
 import { Component, OnInit } from '@angular/core';
+import { mock } from '../vehicles-mock';
 
 @Component({
   selector: 'app-list',
@@ -7,8 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  vehicles:VehicleModel[] = mock.data;
 
+  constructor() { 
+  }
+  
   ngOnInit(): void {
   }
 

@@ -4,7 +4,7 @@ export interface VehicleModel {
   board: string;
   color: string;
   year: number;
-  fuel: FuelType;
+  fuel: string;
 }
 
 export enum FuelType {
