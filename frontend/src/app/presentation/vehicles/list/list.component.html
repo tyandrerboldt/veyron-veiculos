@@ -1,11 +1,13 @@
 <app-template>
+  <button routerLink="/vehicles/create">Novo</button>
   <table>
     <tr>
       <th>ID</th>
       <th>Modelo</th>
       <th>Placa</th>
       <th>Ano</th>
-      <th>Combustível´</th>
+      <th>Combustível</th>
+      <th>Ações</th>
     </tr>
     <tr *ngFor="let vehicle of vehicles">
       <td>
@@ -22,6 +24,10 @@
       </td>
       <td>
         {{vehicle.fuel}}
+      </td>
+      <td>
+        <button (click)="deleteVehicle(vehicle)">Remover</button>
+        <button routerLink="/vehicles/update/{{vehicle.id}}">Editar</button>
       </td>
     </tr>
   </table>  

@@ -1,0 +1,32 @@
+<app-template>
+  <form [formGroup]="form">
+    <input 
+      type="text"
+      placeholder="Modelo do carro"
+      formControlName="model"
+      >
+    <input 
+      type="text"
+      placeholder="Placa"
+      formControlName="board"
+      >
+    <input 
+      type="text"
+      placeholder="Cor"
+      formControlName="color"
+      >
+    <input 
+      type="number"
+      minlength="4"
+      maxlength="4"
+      placeholder="Ano"
+      formControlName="year"
+      >
+    <select
+      formControlName="fuel"
+    >
+      <option>Selecione</option>
+      <option value="gasoline">Gasolina</option>
+    </select>
+  </form>
+</app-template>
