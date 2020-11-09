@@ -1,4 +1,4 @@
-export type VehicleModel = {
+export interface VehicleModel {
   id: number;
   model: string;
   board: string;
