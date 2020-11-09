@@ -11,7 +11,11 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class FormComponent implements OnInit {
 
+  id: number
+
   vehicle: VehicleModel
+
+  fuelOptions: {}[]
 
   form: FormGroup
   
@@ -38,11 +42,27 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  loadFormData = async () => {
-    const id = +this.route.snapshot.paramMap.get("id")
+  save = () => {
+    if(this.form.valid){
+      if(this.id){
+        this.service.update(this.form.getRawValue(), this.id).subscribe(res => {
+          alert("Atualizado com sucesso")
+        })
+      }else{
+        this.service.create(this.form.getRawValue()).subscribe(res => {
+          alert("Criado com sucesso")
+        })
+      }
+    }
+  }
 
-    if(id){
-      this.service.get(id).subscribe(res => {
+  loadFormData = async () => {
+    this.loadOptions()
+
+    this.id = +this.route.snapshot.paramMap.get("id")
+
+    if(this.id){
+      this.service.get(this.id).subscribe(res => {
         this.vehicle = res
         this.form.patchValue({
           model: this.vehicle.model,
@@ -53,6 +73,27 @@ export class FormComponent implements OnInit {
         })
       })
     }    
+  }
+
+  loadOptions = () => {
+    this.fuelOptions = [
+      {
+        value: "alcool",
+        text: "Álcool"
+      },
+      {
+        value: "gasoline",
+        text: "Gasolina"
+      },
+      {
+        value: "diesel",
+        text: "Diesel"
+      },
+      {
+        value: "flex",
+        text: "Flex"
+      },
+    ]
   }
     
 }

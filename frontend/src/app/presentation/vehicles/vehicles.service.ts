@@ -24,6 +24,14 @@ export class VehiclesService {
     return this.http.get<VehicleModel>(this.uri, id)
   }
 
+  create(body: VehicleModel): Observable<VehicleModel>{
+    return this.http.post<VehicleModel>(this.uri, body)
+  }
+
+  update(body: VehicleModel, id: number): Observable<VehicleModel>{
+    return this.http.put<VehicleModel>(this.uri, body, id)
+  }
+
   delete(id: number): Observable<VehicleModel | {}>{
     return this.http.delete<VehicleModel>(this.uri, id).pipe(
       map(obj => obj),

@@ -31,6 +31,10 @@ export class HttpService {
     return this.http.post<T>(`${this.host}/${url}`, body);
   }
 
+  put<T>(url:string, body:T, id:number): Observable<T> {
+    return this.http.put<T>(`${this.host}/${url}/${id}`, body);
+  }
+
   delete<T>(url:string, id:number): Observable<T> {
     return this.http.delete<T>(`${this.host}/${url}/${id}`);
   }
