@@ -3,6 +3,12 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #6e7c7e;
+}
+
+body{
+  background-color: #e6f4f4;
 }
 
 .d-flex{ display: flex; }
@@ -15,19 +21,74 @@
 .w-100{ width: 100%; }
 
 .bg-white{ background-color: #FFF; }
-.bg-success{ background-color: #64ed76; }
+.bg-success{ background-color: #56ca66; }
 .bg-primary{ background-color: #6495ed; }
-.bg-secondary{ background-color: #d6d6d6; }
+.bg-secondary{ background-color: #686868; }
 .bg-danger{ background-color: #ed6464; }
 .bg-warning{ background-color: #eddf64; }
 .bg-dark{ background-color: #333; }
 
 .text-white{ color: #FFF; }
-.text-success{ color: #64ed76; }
+.text-success{ color: #56ca66; }
 .text-primary{ color: #6495ed; }
-.text-secondary{ color: #d6d6d6; }
+.text-secondary{ color: #686868; }
 .text-danger{ color: #ed6464; }
+.text-warning{ color: #eddf64; }
 .text-dark{ color: #333; }
+
+.btn{
+  border: 0;
+  outline: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  background-color: #d6d6d6;
+  border-radius: 3px;
+}
+.btn:hover{ background-color: #e0e0e0; }
+
+.btn-white{ 
+  background-color: #ececec; 
+  color: #414141;
+}
+.btn-white:hover{ background-color: #f1f1f1; }
+
+.btn-success{ 
+  background-color: #56ca66; 
+  color: #ffffff; 
+}
+.btn-success:hover{ background-color: #5edd6f; }
+
+.btn-primary{ 
+  background-color: #6495ed; 
+  color: #ffffff; 
+}
+.btn-primary:hover{ background-color: #6a9af3; }
+
+.btn-secondary{ 
+  background-color: #d6d6d6; 
+  color: #686868; 
+}
+.btn-secondary:hover{ background-color: #e0e0e0; }
+
+.btn-danger{ 
+  background-color: #ed6464; 
+  color: #ffffff; 
+}
+.btn-danger:hover{ background-color: #f36969; }
+
+.btn-warning{ 
+  background-color: #eddf64; 
+  color: #7c7532; 
+}
+.btn-warning:hover{ background-color: #faec6b; }
+
+.btn-dark{ 
+  background-color: #333; 
+  color: #d6d6d6; 
+}
+.btn-dark:hover{ background-color: #414141; }
+
 
 .p-1{ padding: 10px; }
 .p-2{ padding: 20px; }
@@ -44,3 +105,59 @@
 .pt-1{ padding-top: 10px; }
 .pt-2{ padding-top: 20px; }
 .pt-3{ padding-top: 30px; }
+
+.m-1{ margin: 10px; }
+.m-2{ margin: 20px; }
+.m-3{ margin: 30px; }
+
+.mr-1{ margin-right: 10px; }
+.mr-2{ margin-right: 20px; }
+.mr-3{ margin-right: 30px; }
+
+.mx-1{ margin-left: 10px; margin-right: 10px; }
+.mx-2{ margin-left: 20px; margin-right: 20px; }
+.mx-3{ margin-left: 30px; margin-right: 30px; }
+
+.my-1{ margin-top: 10px; margin-bottom: 10px; }
+.my-2{ margin-top: 20px; margin-bottom: 20px; }
+.my-3{ margin-top: 30px; margin-bottom: 30px; }
+
+.mt-1{ margin-top: 10px; }
+.mt-2{ margin-top: 20px; }
+.mt-3{ margin-top: 30px; }
+
+.text-center{ text-align: center; }
+.text-right{ text-align: right; }
+.text-left{ text-align: left; }
+
+.table-default{
+  text-align: center;
+  width: 100%;
+  border-spacing: 0;
+}
+
+.table-default th{
+  padding: 8px 16px;
+  background-color: #d6d6d6;
+}
+
+.table-default tr td{
+  padding: 8px 16px;
+  border-bottom: solid 1px #d6d6d6;
+}
+
+.card{
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  box-shadow: 5px 5px rgba(158, 158, 158, 0.3);
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 10px;
+}
+
+.card-title{
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 5px 0 15px 0;
+}

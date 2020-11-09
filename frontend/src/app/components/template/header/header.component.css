@@ -1,0 +1,14 @@
+#main-header{
+  background-color: #dae8e8;
+  height: 60px;
+  display: flex;
+  position: fixed;
+  width: calc(100vw - 60px);
+  align-items: center;
+  right: 0;
+}
+
+.main-header-title{
+  font-size: 1.3em;
+  padding: 20px;
+}

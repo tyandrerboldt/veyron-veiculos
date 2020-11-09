@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  show:boolean
+
+  constructor() { 
+    this.show = true
+  }
 
   ngOnInit(): void {
+  }
+
+  toggle(){
+    this.show = !this.show
   }
 
 }

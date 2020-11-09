@@ -1,10 +1,20 @@
-<nav>
-  <ul>
+<button 
+  class="main-nav-toggle"
+  (click)="toggle()"
+  >
+  <img src="assets/images/icon-menu.png"/>
+</button>
+<nav id="main-nav" [hidden]="!show">
+  <ul class="pt-3">
     <li>
-      <a routerLink="/">Dashboard</a>
+      <a class="nav-item" routerLink="/">
+        <img class="nav-icon" src="assets/images/icon-home.png"/>
+      </a>
     </li>
     <li>
-      <a routerLink="/vehicles">Veículos</a>
+      <a class="nav-item" routerLink="/vehicles">
+        <img class="nav-icon" src="assets/images/icon-vehicle.png"/>
+      </a>
     </li>
   </ul>
 </nav>
