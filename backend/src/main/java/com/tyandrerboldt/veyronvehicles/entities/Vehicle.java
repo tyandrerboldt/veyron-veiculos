@@ -3,6 +3,8 @@ package com.tyandrerboldt.veyronvehicles.entities;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,19 +23,20 @@ public class Vehicle implements Serializable{
 	private String model;
 	private String board;
 	private String color;
-	private Integer number;
+	private Integer year;
+	@Enumerated(EnumType.STRING)
 	private Fuel fuel;
 
 	public Vehicle() {
 	}
 
-	public Vehicle(Long id, String model, String board, String color, Integer number, Fuel fuel) {
+	public Vehicle(Long id, String model, String board, String color, Integer year, Fuel fuel) {
 		super();
 		this.id = id;
 		this.model = model;
 		this.board = board;
 		this.color = color;
-		this.number = number;
+		this.year = year;
 		this.fuel = fuel;
 	}
 
@@ -69,12 +72,12 @@ public class Vehicle implements Serializable{
 		this.color = color;
 	}
 
-	public Integer getNumber() {
-		return number;
+	public Integer getYear() {
+		return year;
 	}
 
-	public void setNumber(Integer number) {
-		this.number = number;
+	public void setYear(Integer number) {
+		this.year = number;
 	}
 
 	public Fuel getFuel() {
