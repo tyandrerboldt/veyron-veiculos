@@ -1,43 +1,50 @@
 <app-template>
-  <div class="card">
+  <div class="card" id="vehicles-list">
     <div class="card-title">
-      Veículos
-      <button class="btn btn-success" routerLink="/vehicles/create">Adicionar</button>
+      <span>
+        Veículos
+      </span>
+      <button class="btn btn-large btn-success" routerLink="/vehicles/create">Adicionar</button>
     </div>
-    <table class="table-default">
-      <tr>
-        <th>ID</th>
-        <th>Modelo</th>
-        <th>Placa</th>
-        <th>Cor</th>
-        <th>Ano</th>
-        <th>Combustível</th>
-        <th>Ações</th>
-      </tr>
-      <tr *ngFor="let vehicle of vehicles">
-        <td>
-          {{vehicle.id}}
-        </td>
-        <td>
-          {{vehicle.model}}
-        </td>
-        <td>
-          {{vehicle.board}}
-        </td>
-        <td>
-          {{vehicle.color}}
-        </td>
-        <td>
-          {{vehicle.year}}
-        </td>
-        <td>
-          {{vehicle.fuel}}
-        </td>
-        <td>
-          <button class="btn btn-primary mr-1" routerLink="/vehicles/update/{{vehicle.id}}">Editar</button>
-          <button class="btn btn-danger" (click)="deleteVehicle(vehicle)">Remover</button>
-        </td>
-      </tr>
-    </table>  
+    <div class="card-body">
+      <div *ngIf="vehicles.length <= 0" class="alert text-secondary">
+        Ainda não existem veículos cadastrados!
+      </div>
+      <table *ngIf="vehicles.length > 0" class="table-default">
+        <tr>
+          <th>ID</th>
+          <th>Modelo</th>
+          <th>Placa</th>
+          <th>Cor</th>
+          <th>Ano</th>
+          <th>Combustível</th>
+          <th>Ações</th>
+        </tr>
+        <tr *ngFor="let vehicle of vehicles">
+          <td>
+            {{vehicle.id}}
+          </td>
+          <td>
+            {{vehicle.model}}
+          </td>
+          <td>
+            {{vehicle.board}}
+          </td>
+          <td>
+            {{vehicle.color}}
+          </td>
+          <td>
+            {{vehicle.year}}
+          </td>
+          <td>
+            {{vehicle.fuel}}
+          </td>
+          <td>
+            <button class="btn btn-primary mr-1" routerLink="/vehicles/update/{{vehicle.id}}">Editar</button>
+            <button class="btn btn-danger" (click)="deleteVehicle(vehicle)">Remover</button>
+          </td>
+        </tr>
+      </table>  
+    </div>
   </div>
 </app-template>

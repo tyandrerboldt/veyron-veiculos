@@ -1,0 +1,6 @@
+#vehicles-form{
+  width: 70vw;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+}

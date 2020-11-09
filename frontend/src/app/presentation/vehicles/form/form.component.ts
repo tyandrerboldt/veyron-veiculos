@@ -1,3 +1,4 @@
+import { map } from 'rxjs/operators';
 import { VehicleModel } from './../../../core/domain/vehicle.model';
 import { VehiclesService } from './../vehicles.service';
 import { Component, OnInit } from '@angular/core';
@@ -18,6 +19,8 @@ export class FormComponent implements OnInit {
   fuelOptions: {}[]
 
   form: FormGroup
+
+  submited: boolean
   
   constructor(
     private service: VehiclesService,
@@ -37,12 +40,15 @@ export class FormComponent implements OnInit {
       fuel: ["", Validators.required]
     })
 
+    this.submited = false
+
     this.loadFormData()
   }
 
   ngOnInit(): void {}
 
   save = () => {
+    this.submited = true
     if(this.form.valid){
       if(this.id){
         this.service.update(this.form.getRawValue(), this.id).subscribe(res => {
@@ -57,7 +63,7 @@ export class FormComponent implements OnInit {
   }
 
   loadFormData = async () => {
-    this.loadOptions()
+    this.fuelOptions = this.loadOptions()
 
     this.id = +this.route.snapshot.paramMap.get("id")
 
@@ -75,8 +81,12 @@ export class FormComponent implements OnInit {
     }    
   }
 
-  loadOptions = () => {
-    this.fuelOptions = [
+  loadOptions = ():{value:string, text:string}[] => {
+    return [
+      {
+        value: "",
+        text: "Selecione"
+      },
       {
         value: "alcool",
         text: "Álcool"
@@ -94,6 +104,12 @@ export class FormComponent implements OnInit {
         text: "Flex"
       },
     ]
+  }
+
+  getOptionText(value: string): string{
+    const options = this.loadOptions()
+    const text = options.filter(option => option.value === value)[0].text
+    return (text) ? text : 'Desconhecido'
   }
     
 }

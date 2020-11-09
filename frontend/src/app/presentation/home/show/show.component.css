@@ -1,0 +1,16 @@
+.home-logo-image{
+  width: 80%;
+  max-width: 200px;
+}
+
+.home-logo-title{
+  font-size: 3rem;
+  margin-top: 25px;
+}
+
+#home-container{
+  width: 100%;
+  opacity: 0.5;
+  align-self: center;
+  text-align: center;
+}

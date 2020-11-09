@@ -1,32 +1,67 @@
 <app-template>
-  <form [formGroup]="form">
-    <input 
-      type="text"
-      placeholder="Modelo do carro"
-      formControlName="model"
-      >
-    <input 
-      type="text"
-      placeholder="Placa"
-      formControlName="board"
-      >
-    <input 
-      type="text"
-      placeholder="Cor"
-      formControlName="color"
-      >
-    <input 
-      type="number"
-      minlength="4"
-      maxlength="4"
-      placeholder="Ano"
-      formControlName="year"
-      >
-    <select
-      formControlName="fuel"
-    >
-      <option *ngFor="let opt of fuelOptions" value="{{opt.value}}">{{opt.text}}</option>
-    </select>
-    <button (click)="save()">Salvar</button>
-  </form>
+  <div class="card">
+    <div class="card-title">
+      Adicionar veículo
+    </div>
+    <div class="card-body">
+      <form id="vehicles-form" [formGroup]="form">
+        <div class="form-control w-50">
+          <label for="model">Modelo: </label>
+          <input 
+          id="model"
+            type="text"
+            placeholder="Insira o modelo"
+            formControlName="model"
+            >
+          <small class="text-danger" *ngIf="submited && !form.controls.model.valid" >Campo obrigatório!</small>
+        </div>
+        <div class="form-control w-50">
+          <label for="board">Placa: </label>
+          <input 
+            id="board"
+            type="text"
+            placeholder="Insira a placa"
+            formControlName="board"
+            >
+            <small class="text-danger" *ngIf="submited && !form.controls.board.valid" >Campo obrigatório!</small>
+        </div>
+        <div class="form-control w-50">
+          <label for="color">Cor: </label>
+          <input 
+            id="color"
+            type="text"
+            placeholder="Insira a cor"
+            formControlName="color"
+            >
+            <small class="text-danger" *ngIf="submited && !form.controls.color.valid" >Campo obrigatório!</small>
+        </div>
+        <div class="form-control w-25">
+          <label for="year">Ano: </label>
+          <input 
+            id="year"
+            type="text"
+            maxlength="4"
+            placeholder="Insira o ano"
+            formControlName="year"
+            >
+            <small class="text-danger" *ngIf="submited && !form.controls.year.valid" >Campo obrigatório!</small>
+        </div>
+        <div class="form-control w-25">
+          <label for="fuel">Combustivel: </label>
+          <select
+            id="fuel"
+            formControlName="fuel"
+          >
+            <option *ngFor="let opt of fuelOptions" value="{{opt.value}}">{{opt.text}}</option>
+          </select>
+          <small class="text-danger" *ngIf="submited && !form.controls.fuel.valid" >Campo obrigatório!</small>
+        </div>
+        <div class="form-control w-100 text-right pt-3">
+          <button class="btn btn-large btn-dark mr-1" routerLink="/vehicles">Cancelar</button>
+          <button class="btn btn-large btn-success" (click)="save()">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
 </app-template>

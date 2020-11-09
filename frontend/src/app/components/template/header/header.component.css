@@ -10,5 +10,6 @@
 
 .main-header-title{
   font-size: 1.3em;
+  text-transform: uppercase;
   padding: 20px;
 }
