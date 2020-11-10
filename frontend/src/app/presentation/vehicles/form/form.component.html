@@ -4,7 +4,8 @@
       Adicionar veículo
     </div>
     <div class="card-body">
-      <form id="vehicles-form" [formGroup]="form">
+      <span *ngIf="error" class="alert bg-danger text-white">{{errorMessage}}</span>
+      <form *ngIf="!error" id="vehicles-form" [formGroup]="form">
         <div class="form-control w-50">
           <label for="model">Modelo: </label>
           <input 
