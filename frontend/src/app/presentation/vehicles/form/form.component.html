@@ -23,6 +23,7 @@
             type="text"
             placeholder="Insira a placa"
             formControlName="board"
+            mask="AAA-9999||AAA9A99"
             >
             <small class="text-danger" *ngIf="submited && !form.controls.board.valid" >Campo obrigatório!</small>
         </div>
@@ -44,6 +45,7 @@
             maxlength="4"
             placeholder="Insira o ano"
             formControlName="year"
+            mask="0000"
             >
             <small class="text-danger" *ngIf="submited && !form.controls.year.valid" >Campo obrigatório!</small>
         </div>

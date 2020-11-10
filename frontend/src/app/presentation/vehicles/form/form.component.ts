@@ -34,7 +34,10 @@ export class FormComponent implements OnInit {
 
     this.form = this.formBuilder.group({
       model: ["", Validators.required],
-      board: ["", Validators.required],
+      board: ["", Validators.compose([
+        Validators.required,
+        Validators.minLength(7)
+      ])],
       color: ["", Validators.required],
       year: ["", Validators.compose([
         Validators.required,

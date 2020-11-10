@@ -5,7 +5,9 @@ import { ListComponent } from './list/list.component';
 import { ReactiveFormsModule } from '@angular/forms'
 import { TemplateModule } from './../../components/template/template.module';
 import { FormComponent } from './form/form.component';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
 
+const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { FormComponent } from './form/form.component';
     CommonModule,
     VehiclesRoutingModule,
     TemplateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaskModule.forRoot(options)
   ],
   providers: []
 })
