@@ -2,6 +2,10 @@ package com.tyandrerboldt.veyronvehicles.dtos;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+
 import com.tyandrerboldt.veyronvehicles.entities.Vehicle;
 import com.tyandrerboldt.veyronvehicles.entities.enums.Fuel;
 
@@ -9,10 +13,20 @@ public class VehicleDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
+
+	@NotBlank
 	private String model;
+	
+	@NotBlank
 	private String board;
+	
+	@NotBlank
 	private String color;
+	
+	@Positive
 	private Integer year;
+	
+	@NotNull
 	private Fuel fuel;
 
 	public VehicleDTO() {

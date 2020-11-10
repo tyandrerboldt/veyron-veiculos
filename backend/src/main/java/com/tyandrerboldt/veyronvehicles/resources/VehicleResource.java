@@ -3,6 +3,8 @@ package com.tyandrerboldt.veyronvehicles.resources;
 import java.net.URI;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -38,7 +40,7 @@ public class VehicleResource {
 	}
 	
 	@PostMapping
-	public ResponseEntity<VehicleDTO> create(@RequestBody VehicleDTO vehicleDTO){
+	public ResponseEntity<VehicleDTO> create(@Valid @RequestBody VehicleDTO vehicleDTO){
 		vehicleDTO = vehicleService.create(vehicleDTO);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{productId}")
 				.buildAndExpand(vehicleDTO.getId()).toUri();
@@ -47,7 +49,7 @@ public class VehicleResource {
 	
 	@PutMapping("/{vehicleId}")
 	public ResponseEntity<VehicleDTO> update(@PathVariable Long vehicleId, 
-			@RequestBody VehicleDTO vehicleDTO){
+			@Valid @RequestBody VehicleDTO vehicleDTO){
 		vehicleDTO = vehicleService.update(vehicleId, vehicleDTO);
 		return ResponseEntity.ok().body(vehicleDTO);
 	}
