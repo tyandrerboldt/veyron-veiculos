@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tyandrerboldt.veyronvehicles.entities.Vehicle;
+import com.tyandrerboldt.veyronvehicles.dtos.VehicleDTO;
 import com.tyandrerboldt.veyronvehicles.services.VehicleService;
 
 @RestController
@@ -19,8 +19,8 @@ public class VehicleResource {
 	VehicleService vehicleService;
 	
 	@GetMapping
-	public ResponseEntity<List<Vehicle>> findAll(){
-		List<Vehicle> vehicles = vehicleService.findAll();		
+	public ResponseEntity<List<VehicleDTO>> findAll(){
+		List<VehicleDTO> vehicles = vehicleService.findAll();		
 		return ResponseEntity.ok().body(vehicles);
 	}
 	

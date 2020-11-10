@@ -2,9 +2,9 @@ package com.tyandrerboldt.veyronvehicles.entities.enums;
 
 public enum Fuel {
 
-	ALCOOL,
-	GASOLINE,
-	DIESEL,
-	FLEX
+	alcool,
+	gasoline,
+	diesel,
+	flex
 		
 }
