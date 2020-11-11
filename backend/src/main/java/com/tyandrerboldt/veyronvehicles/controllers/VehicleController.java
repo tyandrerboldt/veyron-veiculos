@@ -1,4 +1,4 @@
-package com.tyandrerboldt.veyronvehicles.resources;
+package com.tyandrerboldt.veyronvehicles.controllers;
 
 import java.net.URI;
 import java.util.List;
@@ -22,7 +22,7 @@ import com.tyandrerboldt.veyronvehicles.services.VehicleService;
 
 @RestController
 @RequestMapping("/vehicles")
-public class VehicleResource {
+public class VehicleController {
 
 	@Autowired
 	VehicleService vehicleService;
