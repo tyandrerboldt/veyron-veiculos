@@ -10,13 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  vehicles:VehicleModel[] = [];
+  vehicles: VehicleModel[] = [];
 
   constructor(
     private service: VehiclesService
-  ) { 
+  ) {
   }
-  
+
   ngOnInit(): void {
     this.getVehicles()
   }
@@ -32,10 +32,12 @@ export class ListComponent implements OnInit {
     })
   }
 
-  deleteVehicle = (vehicle: VehicleModel) => {
-    const index = this.vehicles.indexOf(vehicle)
-    this.service.delete(vehicle.id).subscribe(() => {
-      this.vehicles.splice(index, 1)    
-    })    
-  } 
+  deleteVehicle = (id: number) => {
+    const index = this.vehicles.indexOf(this.vehicles.filter(vehicle => vehicle.id === id)[0])
+    if (index >= 0) {      
+      this.service.delete(id).subscribe(() => {
+        this.vehicles.splice(index, 1)
+      })
+    }
+  }
 }
